@@ -26,4 +26,10 @@ Nombre nombre = Nombre("Arturo");
 expect(true,equals(true));
   }
   );
+
+    test('nombre con ñ', () {
+Nombre nombre = Nombre("ñoño69");
+expect(true,equals(true));
+  }
+  );
 }
