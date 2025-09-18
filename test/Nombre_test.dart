@@ -11,5 +11,10 @@ expect(()=> Nombre('EsteNombreEsMuyLargo'),throwsA(isA<LongitudMaximaException>(
   }
   );
 
+  test('No debe tener caraceres especiales', () {
+expect(()=> Nombre('Arturo##'),throwsA(isA<CaracteresInvalidosException>()));
+  }
+  );
+
 
 }
