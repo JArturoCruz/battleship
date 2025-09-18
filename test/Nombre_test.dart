@@ -21,5 +21,9 @@ expect(()=> Nombre('19Arturo'),throwsA(isA<EmpiezaConNumeroException>()));
   }
   );
 
-
+    test('Permite caracteres normales', () {
+Nombre nombre = Nombre("Arturo");
+expect(true,equals(true));
+  }
+  );
 }
