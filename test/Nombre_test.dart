@@ -16,5 +16,10 @@ expect(()=> Nombre('Arturo##'),throwsA(isA<CaracteresInvalidosException>()));
   }
   );
 
+  test('No debe empezar con numero', () {
+expect(()=> Nombre('19Arturo'),throwsA(isA<EmpiezaConNumeroException>()));
+  }
+  );
+
 
 }
