@@ -6,5 +6,10 @@ void main() {
 expect(()=> Nombre(''),throwsA(isA<LongitudMinimaException>()));
   }
   );
+   test('debe tener un maximo de 15 de longitud', () {
+expect(()=> Nombre('EsteNombreEsMuyLargo'),throwsA(isA<LongitudMaximaException>()));
+  }
+  );
+
 
 }
