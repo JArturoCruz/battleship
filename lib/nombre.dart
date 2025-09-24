@@ -20,22 +20,21 @@ class Nombre {
     if (!_tieneLongitudValida(input)) {
       if (input.length < minCaracteres) {
         throw ErrorLongitudMinima();
-      } else {
-        throw ErrorLongitudMaxima();
-      }
-    }
+      }}
 
+    if (!_tieneLongitudValida(input)) {
+       if (input.length > maxCaracteres) {
+        throw ErrorLongitudMaxima();
+      }}
+  
     if (!_todosCaracteresValidos(input)) {
       throw ErrorCaracterInvalido();
     }
-
     if (!_iniciaConLetra(input)) {
       throw ErrorCaracterInvalido();
     }
-
     valor = input;    
   }
-
 
   bool _tieneLongitudValida(String txt) =>
       txt.length >= minCaracteres && txt.length <= maxCaracteres;
@@ -44,17 +43,14 @@ class Nombre {
    return texto.split('').every((char) => caracteresValidos.contains(char));
   }
 
-
-
   bool _iniciaConLetra(String texto) {
     final primer = texto[0];
     return !digitos.contains(primer);
   }
 
   // Constantes
-  static const  digitos = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-  static const  caracteresValidos =
-      'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789';
+  static const  caracteresValidos ='ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789';
+  static const  digitos ={'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
   static const  minCaracteres = 5;
   static const  maxCaracteres = 30;
 }
